@@ -1,19 +1,39 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int n, a, b;
-int main() {
-    int n,k,l,c,d,p,nl,np;
-    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
-    
-    int total_drinks = k * l;
-    total_drinks = total_drinks/nl;
-    
-    int total_slices = c*d;
-    
-    int total_salts = p/np;
-    
-    int ans = min(min(total_drinks,total_slices), total_salts)/n;
-    cout<<ans;
-    
+int main()
+{
+    int n, a, b, c, chest(0), biceps(0), back(0);
+    cin >> n;
+    for (int i = 0; i < n / 3; ++i)
+    {
+        cin >> a >> b >> c;
+        chest += a;
+        biceps += b;
+        back += c;
+    }
+    if (n % 3 == 1)
+    {
+        cin >> a;
+        chest += a;
+    }
+    else if (n % 3 == 2)
+    {
+        cin >> a >> b;
+        chest += a;
+        biceps += b;
+    }
+    if (chest > biceps && chest > back)
+    {
+        cout << "chest" << endl;
+    }
+    else if (biceps > back && biceps > chest)
+    {
+        cout << "biceps" << endl;
+    }
+    else
+    {
+        cout << "back" << endl;
+    }
+    return 0;
 }
