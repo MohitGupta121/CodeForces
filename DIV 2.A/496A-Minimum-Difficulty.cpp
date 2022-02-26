@@ -1,19 +1,23 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int n, a, b;
-int main() {
-    int n,k,l,c,d,p,nl,np;
-    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
-    
-    int total_drinks = k * l;
-    total_drinks = total_drinks/nl;
-    
-    int total_slices = c*d;
-    
-    int total_salts = p/np;
-    
-    int ans = min(min(total_drinks,total_slices), total_salts)/n;
-    cout<<ans;
-    
+int main()
+{
+    int n;
+    cin >> n;
+    int r[n], d[n - 1], s(0), m(1000);
+    cin >> r[0];
+
+    for (int i = 1; i < n; i++)
+    {
+        cin >> r[i];
+        d[i] = r[i] - r[i - 1];
+        s = max(s, d[i]);
+    }
+
+    for (int i = 2; i < n; i++)
+        m = max(min(m, d[i] + d[i - 1]), s);
+
+    cout << m << endl;
+    return 0;
 }
