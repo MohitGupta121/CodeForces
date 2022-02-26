@@ -1,19 +1,19 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int n, a, b;
 int main() {
-    int n,k,l,c,d,p,nl,np;
-    cin>>n>>k>>l>>c>>d>>p>>nl>>np;
+    int a,b,f(0),s(0),d(0);
     
-    int total_drinks = k * l;
-    total_drinks = total_drinks/nl;
+    cin>>a>>b;
     
-    int total_slices = c*d;
+    for(int i=1; i<=6; i++){
+        if(abs(a-i) < abs(b-i))
+            f++;
+        else if(abs(b-i) < abs(a-i))
+            s++;
+        else
+            d++;
+    }
     
-    int total_salts = p/np;
-    
-    int ans = min(min(total_drinks,total_slices), total_salts)/n;
-    cout<<ans;
-    
+    cout<< f << " " << d << " " << s;
 }
