@@ -6,7 +6,7 @@ int main() {
     int n, flag=0;
     char s[305][305], diag, other;
     cin>>n;
-    
+     
     for(int i=0; i<n; i++)
         cin>>s[i];
     
