@@ -3,46 +3,19 @@ using namespace std;
 
 int main() {
     
-    int n;
-    int a[n+1];
-    cin>>n;
+    int n, x, l, r, t(1), m(0);
     
-    if(n%2 != 0) cout<<"-1";
-    else
+    cin >> n >> x;
+    
+    for(int i=0; i<n; i++)
     {
-        for(int i=1; i<=n; i++) a[i]=i;
-        for(int i=1; i<=n-1; i++)
-        {
-            swap(a[i],a[i+1]);
-            i++;
-        }
-        for(int i=1; i<=n; i++)
-        {
-            cout<<a[i]<<" ";
-        } 
+        cin >> l >> r;
+        t += x * ((l-t) / x);
+        m += r - t + 1;
+        t = r + 1;
     }
+    
+    cout << m;
     
     return 0;
 }	
-
-OR
-
-int main()
-{
-    int n;
-    cin >> n;
-    if (n % 2 == 1)
-    {
-        cout << -1 << endl;
-    }
-    else
-    {
-        cout << "2 1";
-        for (int i = 3; i < n; i += 2)
-        {
-            cout << " " << i + 1 << " " << i;
-        }
-        cout << endl;
-    }
-    return 0;
-}
