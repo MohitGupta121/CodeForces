@@ -3,19 +3,28 @@ using namespace std;
 
 int main() {
     
-    int n, x, l, r, t(1), m(0);
+    int n, t(0);
+    cin>>n;
     
-    cin >> n >> x;
+    int x[n], y[n];
+    
+    for(int i=0; i<n; i++)
+        cin >> x[i] >> y[i];
     
     for(int i=0; i<n; i++)
     {
-        cin >> l >> r;
-        t += x * ((l-t) / x);
-        m += r - t + 1;
-        t = r + 1;
+         bool r(false), l(false), u(false), d(false);
+         for(int j=0; j<n; j++)
+         {
+            if (x[j] > x[i] and y[j] == y[i]) r = true;
+            if (x[j] < x[i] and y[j] == y[i]) l = true;
+            if (x[j] == x[i] and y[j] > y[i]) u = true;
+            if (x[j] == x[i] and y[j] < y[i]) d = true;
+         }
+         if(r and l and u and d) t++;
     }
     
-    cout << m;
+    cout << t;
     
     return 0;
 }	
