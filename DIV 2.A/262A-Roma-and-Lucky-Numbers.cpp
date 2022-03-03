@@ -1,21 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    
-    int n, x, l, r, t(1), m(0);
-    
-    cin >> n >> x;
-    
-    for(int i=0; i<n; i++)
+int main()
+{
+    int n, k, count(0);
+    cin >> n >> k;
+
+    string s;
+    while (n--)
     {
-        cin >> l >> r;
-        t += x * ((l-t) / x);
-        m += r - t + 1;
-        t = r + 1;
+        int lucky(0);
+        cin >> s;
+        for (size_t i = 0; i < s.length(); ++i)
+        {
+            if (s[i] == '4' || s[i] == '7')
+            {
+                lucky += 1;
+            }
+        }
+        if (lucky <= k)
+        {
+            count += 1;
+        }
     }
-    
-    cout << m;
-    
+    cout << count << endl;
     return 0;
-}	
+}
