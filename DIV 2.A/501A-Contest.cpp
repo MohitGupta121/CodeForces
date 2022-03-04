@@ -3,26 +3,19 @@ using namespace std;
 
 int main()
 {
-    int n, k, count(0);
-    cin >> n >> k;
-
-    string s;
-    while (n--) 
+    long int x,y,a,b,c,d;
+    
+    while(cin>>a>>b>>c>>d)
     {
-        int lucky(0);
-        cin >> s;
-        for (size_t i = 0; i < s.length(); ++i)
-        {
-            if (s[i] == '4' || s[i] == '7')
-            {
-                lucky += 1;
-            }
-        }
-        if (lucky <= k)
-        {
-            count += 1;
-        }
+        x=max((3*a)/10,a-(a/250)*c);
+        y=max((3*b)/10,b-(b/250)*d);
+        
+        if(x==y)
+            cout<<"Tie\n";
+        else if(x>y)
+            cout<<"Misha\n";
+        else
+            cout<<"Vasya\n";
     }
-    cout << count << endl;
     return 0;
 }
