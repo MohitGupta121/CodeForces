@@ -3,19 +3,22 @@ using namespace std;
 
 int main()
 {
-    long int x,y,a,b,c,d;
-    
-    while(cin>>a>>b>>c>>d)
+    long int i,j,a,b,c,n,k,ans,rem;
+    while(cin>>n>>a>>b>>c)
     {
-        x=max((3*a)/10,a-(a/250)*c);
-        y=max((3*b)/10,b-(b/250)*d);
-        
-        if(x==y)
-            cout<<"Tie\n";
-        else if(x>y)
-            cout<<"Misha\n";
-        else
-            cout<<"Vasya\n";
+          ans=0;
+       for(i=0;i*a<=n;++i)
+       {
+           for(j=0;i*a+j*b<=n;++j)
+           {
+                rem=n-i*a-j*b;
+                if(rem%c==0)
+                {
+                    k=rem/c;
+                ans=max(ans,i+j+k);}
+           }
+
+       }
+       cout<<ans<<endl;
     }
-    return 0;
 }
