@@ -1,24 +1,28 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    long int i,j,a,b,c,n,k,ans,rem;
-    while(cin>>n>>a>>b>>c)
-    {
-          ans=0;
-       for(i=0;i*a<=n;++i)
-       {
-           for(j=0;i*a+j*b<=n;++j)
-           {
-                rem=n-i*a-j*b;
-                if(rem%c==0)
-                {
-                    k=rem/c;
-                ans=max(ans,i+j+k);}
-           }
-
-       }
-       cout<<ans<<endl;
-    }
+    int n,m;
+    cin>>n>>m;
+    int a[n], b[m];
+    
+    for(int i=0; i<n; i++)
+        cin >> a[i];
+    for(int i=0; i<m; i++)
+        cin >> b[i];
+        
+    sort(a, a+n);
+    sort(b, b+m);
+    
+    int time = 2 * a[0];
+    
+    time = max(time, a[n-1]);
+    
+    if(b[0] <= time)
+        cout << -1;
+    else
+        cout << time;
+    
+    return 0;
 }
