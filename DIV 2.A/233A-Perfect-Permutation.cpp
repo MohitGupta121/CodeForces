@@ -5,7 +5,7 @@ int main() {
     
     int n;
     int a[n+1];
-    cin>>n;
+    cin>>n; 
       
     if(n%2 != 0) cout<<"-1";
     else 
