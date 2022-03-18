@@ -23,7 +23,7 @@ int main() {
          }
          if(r and l and u and d) t++;
     }
-    
+     
     cout << t;
     
     return 0;
