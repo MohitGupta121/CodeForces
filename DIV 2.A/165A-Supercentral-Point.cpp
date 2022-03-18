@@ -7,7 +7,7 @@ int main() {
     cin>>n;
       
     int x[n], y[n];
-    
+     
     for(int i=0; i<n; i++)
         cin >> x[i] >> y[i];
     
