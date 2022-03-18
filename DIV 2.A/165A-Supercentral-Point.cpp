@@ -5,7 +5,7 @@ int main() {
       
     int n, t(0);
     cin>>n;
-     
+      
     int x[n], y[n];
     
     for(int i=0; i<n; i++)
