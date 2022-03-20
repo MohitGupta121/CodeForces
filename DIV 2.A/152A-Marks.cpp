@@ -6,7 +6,7 @@ int main()
         int n,m;
         int count=0;
    
-
+ 
         cin>>n>>m;
         char a[n][m],ch[n],max;
         int s[n];
