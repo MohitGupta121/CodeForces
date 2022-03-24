@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    
+     
     string s;
     getline(cin,s);   // input whole string including space commas everything.
     set<char> k;     // take unique char only
