@@ -14,7 +14,7 @@ int main(){
         }    
         
     }
-    
+  
     cout << k.size(); // print no. of char stores
     
 }
